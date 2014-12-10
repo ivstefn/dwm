@@ -795,9 +795,11 @@ drawbar(Monitor *m) {
             if(w > mw) w = mw;
             if(c == lastvis) w = ow;
 
+            drw_setscheme(drw, c == m->sel ? &scheme[SchemeSel] : &scheme[SchemeNorm]);
+
             drw_text(drw, x, 0, w, bh, c->name, False);
             if(c != firstvis) drawline(x, 0);
-            drw_rect(drw, x, 0, w, bh, m->sel->isfixed, m->sel->isfloating, True);
+            drw_rect(drw, x, 0, w, bh, c->isfixed, c->isfloating, False);
 
             x += w;
             w = ow - w;
