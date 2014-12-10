@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include "push.c"
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
@@ -17,6 +16,9 @@ static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+#include "push.c"
+#include "nextprevtag.c"
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -85,6 +87,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,		XK_j,      pushdown,       {0} },
 	{ MODKEY|ControlMask,		XK_k,      pushup,         {0} },
+	{ MODKEY,			XK_less,   view_adjacent,  { .i = -1 } },
+	{ MODKEY|ShiftMask,		XK_less,   view_adjacent,  { .i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -113,5 +117,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,            0,              Button4,        view_adjacent,  { .i = -1 } },
+	{ ClkTagBar,            0,              Button5,        view_adjacent,  { .i = -1 } },
 };
 
