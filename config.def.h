@@ -108,6 +108,8 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkLtSymbol,          0,              Button4,        setlayout,      {.v = &layouts[3]} },
+	{ ClkLtSymbol,          0,              Button5,        setlayout,      {.v = &layouts[4]} },
 	{ ClkWinTitle,          0,              Button1,        focusonclick,   {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkWinTitle,          0,              Button4,        focusstack,     {.i = -1 } },
