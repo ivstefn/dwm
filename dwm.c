@@ -687,7 +687,7 @@ bottomdeck(Monitor *m) {
                 return;
         if(n > m->nmaster) {
                 mh = m->nmaster ? m->mfact * m->wh : 0;
-                th = (m->wh - mh) / (n - m->nmaster);
+                th = (m->wh);
                 ty = m->wy + mh;
         } 
         else {
