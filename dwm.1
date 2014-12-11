@@ -53,6 +53,18 @@ click on a tag label applies that tag to the focused window.
 .TP
 .B Mod4\-Button3
 click on a tag label adds/removes that tag to/from the focused window.
+.TP
+.B Button4
+click on a tag label select previous tag.
+.TP
+.B Button5
+click on a tag label selects next tag.
+.TP
+.B Button4
+click on a window label selects previous window.
+.TP
+.B Button5
+click on a window label selects next window.
 .SS Keyboard commands
 .TP
 .B Mod4\-Shift\-Return
@@ -83,6 +95,9 @@ Sets floating layout.
 .B Mod4\-m
 Sets monocle layout.
 .TP
+.B Mod4\-r
+Sets deck layout.
+.TP
 .B Mod4\-space
 Toggles between current and previous layout.
 .TP
@@ -91,6 +106,12 @@ Focus next window.
 .TP
 .B Mod4\-k
 Focus previous window.
+.TP
+.B Mod4\-Control\-j
+Push window down.
+.TP
+.B Mod4\-Control\-k
+Push window up.
 .TP
 .B Mod4\-i
 Increase clients in master area.
@@ -133,6 +154,12 @@ View all windows with any tag.
 .TP
 .B Mod4\-Control\-[1..n]
 Add/remove all windows with nth tag to/from the view.
+.TP
+.B Mod4\->
+View all windows with next tag.
+.TP
+.B Mod4\-<
+View all windows with previous tag.
 .TP
 .B Mod4\-Shift\-Escape
 Quit dwm.
