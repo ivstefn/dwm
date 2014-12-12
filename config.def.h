@@ -90,6 +90,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_k,      pushup,         {0} },
 	{ MODKEY,			XK_less,   view_adjacent,  { .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_less,   view_adjacent,  { .i = +1 } },
+	{ Mod1Mask,			XK_Tab,	   focusstack,     {.i = +1 } },
+	{ Mod1Mask|ShiftMask,		XK_Tab,	   focusstack,     {.i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
