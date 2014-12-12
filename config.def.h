@@ -116,6 +116,7 @@ static Button buttons[] = {
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkWinTitle,          0,              Button4,        focusstack,     {.i = -1 } },
 	{ ClkWinTitle,          0,              Button5,        focusstack,     {.i = +1 } },
+	{ ClkWinTitle,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          ControlMask,    Button4,        pushup,         {0} },
 	{ ClkWinTitle,          ControlMask,    Button5,        pushdown,       {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
