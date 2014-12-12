@@ -756,8 +756,7 @@ dirtomon(int dir) {
 
 void
 drawbar(Monitor *m) {
-	int x, xx, w, ow, mw = 0, extra, tw, a = 0, s = 0;
-    char posbuf[10];
+	int x, xx, w, ow, mw = 0, extra, tw;
 	unsigned int i, occ = 0, urg = 0, n = 0;
 	Client *c, *firstvis, *lastvis = NULL;
 
@@ -783,28 +782,6 @@ drawbar(Monitor *m) {
 	x += w;
 	xx = x;
 	if(m == selmon) { /* status is only drawn on selected monitor */
-        if(m->lt[m->sellt]->arrange == monocle){
-            x = xx;
-            for(c = nexttiled(m->clients), a = 0, s = 0; c; c = nexttiled(c->next), a++) {
-                if(c == m->stack)
-                    s = a;
-            }
-            if(!s && a)
-                s = a;
-            snprintf(posbuf, LENGTH(posbuf), "[%d/%d]", s, a);
-            w = TEXTW(posbuf);
-            drw_text(drw, x, 0, w, bh, posbuf, 0);
-            xx = x + w;
-        }
-
-        /*
-        char *buf = stext, *ptr = buf;
-        while (*ptr) {
-            for (i = 0; *ptr < 0; i++, ptr++);
-            w 2+= drw_font_getexts_width(drw->font, buf, i);
-            w += TEXTW(buf);
-            buf=++ptr;
-        }*/
         w = TEXTW(stext);
 
 		x = m->ww - w;
