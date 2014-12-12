@@ -678,7 +678,7 @@ deck(Monitor *m) {
 
 void
 bottomdeck(Monitor *m) {
-        int w, mh, mx, tx, ty, th;
+        int w, mh, mx, tx, ty, th, h;
         unsigned int i, n;
         Client *c;
 
@@ -701,9 +701,10 @@ bottomdeck(Monitor *m) {
                         mx += WIDTH(c);
                 } 
                 else {
-                        resize(c, tx, ty, m->ww - (2 * c->bw), th - (2 * c->bw), False);
-                        if(th != m->wh)
-                                ty += HEIGHT(c);
+			h = m->wh - mh;
+			resize(c, tx, ty, m->ww - (2 * c->bw), h - (2 * c->bw), False);
+			if(th != m->wh)
+				ty += HEIGHT(c);
                 }
         }
 }
