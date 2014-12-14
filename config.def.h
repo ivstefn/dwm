@@ -112,6 +112,8 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkLtSymbol,          0,              Button4,        setlayout,      {.v = &layouts[3]} },
 	{ ClkLtSymbol,          0,              Button5,        setlayout,      {.v = &layouts[4]} },
+	{ ClkLtSymbol,          MODKEY,         Button4,	setmfact,	{.f = -0.05} },
+	{ ClkLtSymbol,          MODKEY,         Button5,	setmfact,	{.f = +0.05} },
 	{ ClkWinTitle,          0,              Button1,        focusonclick,   {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkWinTitle,          0,              Button4,        focusstack,     {.i = -1 } },
